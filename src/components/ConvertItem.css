@@ -1,0 +1,37 @@
+.main {
+  padding: 25px;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.219);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+}
+
+.flexPart {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+.itcButton {
+  height: fit-content;
+  font-size: 20px;
+  margin: 15px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input {
+  font-size: 25px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 0 15px 0 0;
+}

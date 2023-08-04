@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import ConvertItem from "./components/ConvertItem";
 
 function App() {
+  const [currencies, setCurrencies] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.exchangerate.host/latest")
+      .then((response) => response.json())
+      .then((data) => setCurrencies(Object.keys(data.rates)));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <ConvertItem currencies={currencies} />
+    </main>
   );
 }
 
